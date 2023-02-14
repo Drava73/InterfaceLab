@@ -12,9 +12,11 @@ namespace InterfaceLab
         {
             Array arr = new Array();
             arr.CreateArray();
-            arr.Show("asdfasdfasdf");
+/*            arr.Show("asdfasdfasdf");*/
 /*            arr.Show();
 */            arr.Max();
+            Console.Write("\n--------");
+            arr.Less(3);
             Console.ReadLine();
         }
     }

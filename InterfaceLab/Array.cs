@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceLab
 {
-    public class Array : IOutput,IMath,ISort
+    public class Array : IOutput,IMath,ISort,ICalc, IOutput2,ICalc2
     {
         private int size;
         private int[] mass;
@@ -143,6 +143,60 @@ namespace InterfaceLab
                 SortAsc();
             }
             else SortDesc();
+        }
+        public int Less(int valueToCompare)
+        {
+            int a = 0;
+            for(int i = 0; i < mass.Length; i++)
+            {
+                if(valueToCompare < mass[i]) { a++; }
+               
+            }
+            return a;
+        }
+        public int Greater(int valueToCompare)
+        {
+            int a = 0;
+            for (int i = 0; i < mass.Length; i++)
+            {
+                if (valueToCompare > mass[i]) { a++; }
+
+            }
+            return a;
+        }
+        public void ShowEven() {
+            for (int i = 0; i < mass.Length; i++)
+            {
+                if ((mass[i]%2)==0) { Console.Write(mass[i]); }
+            }
+        }
+        public void ShowOdd() {
+            for (int i = 0; i < mass.Length; i++)
+            {
+                if ((mass[i] % 2) != 0) { Console.Write(mass[i]); }
+            }
+        }
+        int CountDistinct()
+        {
+            int a = 0;
+            for (int i = 0; i < mass.Length; i++)
+            {
+                for(int j = i; j < mass.Length; j++)
+                {
+                    if(mass[i] == mass[j]) {
+                        a++;
+                    }
+                }
+            }
+            return a;
+        }
+        int EqualToValue(int valueToCompare) {
+            int a = 0;
+            for (int i = 0; i < mass.Length; i++)
+            {
+                if (mass[i] == valueToCompare) { a++; }
+            }
+            return a;
         }
     }
 }
